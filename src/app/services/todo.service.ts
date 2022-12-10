@@ -1,9 +1,14 @@
 import { Injectable } from '@angular/core';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class TodoService {
+  private todos: string[] = ['Limpar casa', 'Estudar'];
 
-  constructor() { }
+  constructor() {
+    console.log(this.todos);
+  }
+
+  getTodos() {
+    return this.todos;
+  }
 }

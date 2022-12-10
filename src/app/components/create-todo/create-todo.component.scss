@@ -1,0 +1,50 @@
+.containerInput {
+  max-width: 128rem;
+  margin: 0 auto;
+
+  .inputContent {
+    margin: -2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    input {
+      padding: 1.6rem;
+      max-width: 60rem;
+      width: 100%;
+      background: #262626;
+      border: 1px solid #0d0d0d;
+      border-radius: 8px;
+      outline: none;
+      font-size: 1.6rem;
+
+      &::placeholder {
+        color: #808080;
+        font-size: 1.6rem;
+      }
+
+      &:focus {
+        color: #fff;
+      }
+    }
+
+    button {
+      padding: 1.6rem;
+      max-width: 9rem;
+      background: #1e6f9f;
+      border-radius: 8px;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      justify-content: center;
+
+      &:hover {
+        background: #50ade4;
+      }
+    }
+  }
+}
