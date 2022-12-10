@@ -1,9 +1,22 @@
-<div class="containerInput">
+<div class="container">
   <div class="inputContent">
     <input type="text" #todoValue placeholder="Adicione uma nova tarefa" />
-    <!-- <button (click)="onAddTodo(todoValue.value); todoValue.value = ''">
-  ADD +
-</button> -->
-    <button (click)="expression()">ADD <img src="../../../assets/plus.svg" alt="" /></button>
+    <button (click)="onAddTodo(todoValue.value); todoValue.value = ''">
+      ADD <img src="../../../assets/plus.svg" alt="" />
+    </button>
+  </div>
+  <div class="todosContainer">
+    <h3>
+      Tarefas criadas: <span>{{ todos.length }}</span>
+    </h3>
+    <ul>
+      <li *ngFor="let todo of todos">
+        <span class="flex">
+          <input type="radio" />
+          {{ todo }}
+        </span>
+        <fa-icon [icon]="faTrash" class="icon"></fa-icon>
+      </li>
+    </ul>
   </div>
 </div>
