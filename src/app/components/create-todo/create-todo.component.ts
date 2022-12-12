@@ -1,10 +1,8 @@
 import { Component, Input } from '@angular/core';
-import { TodoService } from 'src/app/services/todo.service';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 interface TypesTodo {
   text: string;
-  check: boolean;
   id: number;
 }
 
@@ -12,23 +10,35 @@ interface TypesTodo {
   selector: 'app-create-todo',
   templateUrl: './create-todo.component.html',
   styleUrls: ['./create-todo.component.scss'],
-  providers: [TodoService],
 })
 export class CreateTodoComponent {
   faTrash = faTrash;
   todos: TypesTodo[] = [];
 
-  constructor(private todoService: TodoService) {}
+  getTodos() {
+    return this.todos;
+  }
 
   ngOnInit(): void {
-    this.todos = this.todoService.getTodos();
+    this.getTodos();
   }
 
   onAddTodo(todo: string) {
-    this.todoService.addTodo(todo);
+    if (todo === '') {
+      alert('Adicione um todo');
+      return;
+    }
+    this.todos.push({
+      text: todo,
+      id: Math.floor(Math.random() * 1000000),
+    });
   }
 
   removeTodo(todo: TypesTodo) {
-    this.todoService.removeTodo(todo);
+    for (let i = 0; i < this.todos.length; i++) {
+      if (this.todos[i].id == todo.id) {
+        this.todos.splice(i, 1);
+      }
+    }
   }
 }

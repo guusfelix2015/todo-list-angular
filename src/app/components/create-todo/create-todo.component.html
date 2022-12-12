@@ -1,7 +1,9 @@
 <div class="container">
   <div class="inputContent">
     <input type="text" #todoValue placeholder="Adicione uma nova tarefa" />
-    <button (click)="onAddTodo(todoValue.value); todoValue.value = ''">
+    <button
+      (click)="onAddTodo(todoValue.value); todoValue.value = ''"
+    >
       ADD <img src="../../../assets/plus.svg" alt="" />
     </button>
   </div>
@@ -9,6 +11,13 @@
     <h3>
       Tarefas criadas: <span>{{ todos.length }}</span>
     </h3>
+    <div class="notHaveTodos" *ngIf="todos.length == 0">
+      <div class="notHaveTodosContent">
+        <img src="../../../assets/Clipboard.svg" alt="" />
+        <h4>Você ainda não tem tarefas cadastradas</h4>
+        <p>Crie tarefas e organize seus itens a fazer</p>
+      </div>
+    </div>
     <ul>
       <li *ngFor="let todo of todos">
         <span class="flex">

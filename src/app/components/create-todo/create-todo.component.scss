@@ -2,6 +2,34 @@
   max-width: 120rem;
   margin: 0 auto;
 
+  .notHaveTodos {
+    border-top: 2px solid #333333;
+    margin-top: 3rem;
+
+    .notHaveTodosContent {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      height: 20rem;
+
+      img {
+        margin-bottom: 2rem;
+      }
+
+      h4 {
+        font-size: 1.6rem;
+        font-weight: 800;
+        color: #808080;
+      }
+
+      p {
+        font-size: 1.6rem;
+        color: #808080;
+      }
+    }
+  }
+
   .todosContainer {
     margin-top: 2rem;
 
@@ -14,7 +42,7 @@
         display: flex;
         justify-content: space-between;
         background: #333333;
-        padding: 1.6rem;
+        padding: 3rem;
         box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.06);
         border-radius: 8px;
         color: #f2f2f2;
@@ -31,6 +59,10 @@
 
         .lineThrough {
           text-decoration: line-through;
+        }
+
+        .line {
+          text-decoration: none;
         }
 
         .icon {
