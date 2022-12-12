@@ -5,6 +5,7 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons';
 interface TypesTodo {
   text: string;
   check: boolean;
+  id: number;
 }
 
 @Component({
@@ -25,10 +26,9 @@ export class CreateTodoComponent {
 
   onAddTodo(todo: string) {
     this.todoService.addTodo(todo);
-    console.log(this.todos);
   }
 
-  removeTodo(todo: string) {
-    this.todos = this.todos.filter((t) => t.text !== todo);
+  removeTodo(todo: TypesTodo) {
+    this.todoService.removeTodo(todo);
   }
 }
