@@ -12,10 +12,13 @@
     <ul>
       <li *ngFor="let todo of todos">
         <span class="flex">
-          <input type="radio" />
-          {{ todo }}
+          {{ todo.text }}
         </span>
-        <fa-icon [icon]="faTrash" class="icon"></fa-icon>
+        <fa-icon
+          [icon]="faTrash"
+          class="icon"
+          (click)="removeTodo(todo.text)"
+        ></fa-icon>
       </li>
     </ul>
   </div>

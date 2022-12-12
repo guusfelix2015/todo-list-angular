@@ -25,10 +25,12 @@
         border: 1px solid #333333;
         margin-bottom: 1.5rem;
 
-        span {
-          input {
-            margin-right: 1rem;
-          }
+        input[type="radio"] {
+          margin-right: 2rem;
+        }
+
+        .lineThrough {
+          text-decoration: line-through;
         }
 
         .icon {
